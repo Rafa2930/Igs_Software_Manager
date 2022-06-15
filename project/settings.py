@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'igs_Soft_manag'
+    'rest_framework',
+    'employees'
 ]
 
 MIDDLEWARE = [

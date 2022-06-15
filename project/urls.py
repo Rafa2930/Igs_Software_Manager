@@ -16,7 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from rest_framework import routers
+
+from employees.api import viewsets as employeesviewsets
+
+route = routers.DefaultRouter()
+
+route.register(r'employees/', employeesviewsets.EmployeesViewSet, basename="Employees")
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('igs_Soft_manag.urls'))
+    path('employees/', include('employees.urls')),
+    path('', include(route.urls))
 ]
